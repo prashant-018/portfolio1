@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prashant Shrivastava | Full Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1><span class="highlight">Prashant</span>Shrivastava.</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <p class="animate-on-scroll">Full Stack Web Developer</p>
+      <h2 class="animate-on-scroll">Hi, I'm <span class="highlight">Prashant Shrivastava</span></h2>
+      <h2 class="animate-on-scroll">From <span class="highlight">India</span>.</h2>
+    </div>
+    <div class="hero-image animate-on-scroll">
+      <img src="/github image.jpg" alt="Prashant Shrivastava" />
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-content">
+        <h2 class="animate-on-scroll">About Me</h2>
+        <p class="animate-on-scroll">
+          Hi! I'm Prashant Shrivastava, a passionate web and app developer currently pursuing my BTech in Computer Science.
+          I have a strong foundation in HTML, CSS, JavaScript, React.js and Java, with expertise in building modern, dynamic,
+          and user-friendly web applications.
+        </p>
+
+        <div class="tabs animate-on-scroll">
+          <button class="tab-btn active" onclick="openTab(event, 'skills')">Skills</button>
+          <button class="tab-btn" onclick="openTab(event, 'experience')">Experience</button>
+          <button class="tab-btn" onclick="openTab(event, 'education')">Education</button>
+        </div>
+
+        <div id="skills" class="tab-content active animate-on-scroll">
+          <h3>Teaching</h3>
+          <p>Basic Computer & Web Design Courses</p>
+
+          <h3>Frontend Development</h3>
+          <p>Designing responsive and interactive websites</p>
+
+          <h3>Technical Skills</h3>
+          <p>
+            Frontend: HTML, CSS, JavaScript, React.js<br />
+            Backend: Node.js, Express<br />
+            Databases: MongoDB, Firebase<br />
+            Tools: Git, VS Code, Figma
+          </p>
+        </div>
+
+        <div id="experience" class="tab-content animate-on-scroll">
+          <h3>Freelance Web Developer | 2022-Present</h3>
+          <p>Developed custom websites for clients across various industries.</p>
+
+          <h3>Web Developer Intern | Summer 2023</h3>
+          <p>Worked on frontend development using React.js and backend APIs.</p>
+        </div>
+
+        <div id="education" class="tab-content animate-on-scroll">
+          <h3>B.Tech in Computer Science | 2021-2025</h3>
+          <p>Currently pursuing my degree with focus on web technologies.</p>
+
+          <h3>Online Certifications</h3>
+          <p>Completed courses in Full Stack Development, React.js, JavaScript.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2 class="animate-on-scroll">My Services</h2>
+    <div class="service-container">
+      <div class="service-card animate-on-scroll">
+        <span class="icon"><i class="fas fa-code"></i></span>
+        <h3>Web Development</h3>
+        <p>Custom website development with modern technologies.</p>
+        <a href="https://github.com/prashant-018" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card highlighted animate-on-scroll">
+        <span class="icon"><i class="fas fa-paint-brush"></i></span>
+        <h3>UI/UX Design</h3>
+        <p>Beautiful, intuitive interfaces that enhance user experience.</p>
+        <a href="https://github.com/prashant-018" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card animate-on-scroll">
+        <span class="icon"><i class="fas fa-mobile-alt"></i></span>
+        <h3>Responsive Design</h3>
+        <p>Looks perfect on all devices. Mobile-first design.</p>
+        <a href="https://github.com/prashant-018" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="work" id="portfolio">
+    <h2 class="section-title">My Work</h2>
+    <div class="work-container">
+      <div class="work-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Project 1"/>
+        <div class="overlay">
+          <h3>E-commerce Website</h3>
+          <p>Responsive store with listings, cart and secure checkout.</p>
+          <a href="https://github.com/prashant-018" target="_blank"><span>🔗</span></a>
+        </div>
+      </div>
+      <div class="work-card highlighted">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4" alt="Music App"/>
+        <div class="overlay">
+          <h3>Music App</h3>
+          <p>Connects you to talent worldwide. Download from Play Store.</p>
+          <a href="https://github.com/prashant-018" target="_blank"><span>🔗</span></a>
+        </div>
+      </div>
+      <div class="work-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="Chat App"/>
+        <div class="overlay">
+          <h3>Chat Application</h3>
+          <p>Real-time messaging with authentication and chat history.</p>
+          <a href="https://github.com/prashant-018" target="_blank"><span>🔗</span></a>
+        </div>
+      </div>
+    </div>
+    <a href="https://github.com/prashant-018" target="_blank" class="see-more">See more on GitHub</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 class="animate-on-scroll">Get In Touch</h2>
+    <div class="contact-container">
+      <div class="contact-info animate-on-scroll">
+        <p><i class="fas fa-envelope"></i> <a href="mailto:prahsantshrivatava651@gmail.com">prahsantshrivatava651@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+917489202191">+91-7489202191</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Madhya Pradesh, India</p>
+
+        <div class="social-icons">
+          <a href="https://github.com/prashant-018" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/prashant-shrivastava-612a64305/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <a href="/resume.pdf" download class="btn animate-on-scroll">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+      </div>
+
+      <form class="contact-form animate-on-scroll" action="https://formspree.io/f/xnnpdpnn" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2023 Prashant Shrivastava. All rights reserved.</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- JavaScript -->
+  <script>
+    function openTab(evt, tabName) {
+      let i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tab-btn");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      header.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    const backToTopButton = document.getElementById("backToTop");
+    window.addEventListener("scroll", function () {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add("visible");
+      } else {
+        backToTopButton.classList.remove("visible");
+      }
+    });
+
+    const animateElements = document.querySelectorAll(".animate-on-scroll");
+    function checkScroll() {
+      animateElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight - 100) {
+          element.classList.add("animated");
+        }
+      });
+    }
+
+    checkScroll();
+    window.addEventListener("scroll", checkScroll);
+  </script>
+</body>
+</html>
