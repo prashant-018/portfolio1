@@ -144,6 +144,16 @@ nav ul li a:hover::after {
   z-index: 2;
 }
 
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin: 0.5rem 0 0.75rem;
+  line-height: 1.2;
+  background: linear-gradient(45deg, var(--light), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .hero-text p {
   font-size: 1.2rem;
   color: var(--gray);
@@ -151,14 +161,59 @@ nav ul li a:hover::after {
   letter-spacing: 1px;
 }
 
-.hero-text h2 {
-  font-size: 3.5rem;
-  margin: 0.5rem 0;
-  line-height: 1.2;
-  background: linear-gradient(45deg, var(--light), var(--primary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.subheadline {
+  max-width: 48ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.typing {
+  font-weight: 600;
+  color: var(--light);
+  margin-top: 0.5rem;
+  min-height: 1.5em;
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.typing .cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: var(--primary);
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-quick {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-quick a {
+  color: var(--light);
+  font-size: 1.25rem;
+  transition: var(--transition);
+}
+
+.social-quick a:hover {
+  color: var(--primary);
+  transform: translateY(-3px);
 }
 
 .hero-image {
@@ -219,7 +274,7 @@ nav ul li a:hover::after {
   background: rgba(20, 20, 20, 0.7);
   padding: 3rem;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   position: relative;
   z-index: 1;
@@ -432,6 +487,29 @@ nav ul li a:hover::after {
   font-size: 1rem;
 }
 
+/* Tech tags inside service cards */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--light);
+  transition: var(--transition);
+}
+
+.tag:hover {
+  background: linear-gradient(45deg, rgba(255, 0, 93, 0.15), rgba(0, 240, 255, 0.15));
+  border-color: rgba(255, 0, 93, 0.35);
+}
+
 .service-card a {
   color: var(--primary);
   text-decoration: none;
@@ -468,7 +546,6 @@ nav ul li a:hover::after {
   text-align: center;
   position: relative;
 }
-
 
 .work h2::after {
   content: '';
@@ -543,9 +620,69 @@ nav ul li a:hover::after {
 
 .overlay p {
   font-size: 1rem;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem;
   color: white;
   text-align: center;
+  max-width: 48ch;
+  line-height: 1.6;
+  line-clamp: 3; /* standard prop for tooling compatibility */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.overlay .tech {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
+.overlay .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.overlay .actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  /* override circular link defaults */
+  width: auto !important;
+  height: auto !important;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.overlay .actions .btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.overlay .actions .btn-primary {
+  background: linear-gradient(45deg, #ff005d, #00f0ff);
+  border-color: transparent;
+}
+
+.overlay .actions .btn-primary:hover {
+  opacity: 0.95;
+}
+
+.overlay .actions .btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .overlay a {
@@ -557,8 +694,8 @@ nav ul li a:hover::after {
   border-radius: 50%;
   background: white;
   color: var(--primary);
-  font-size: 1.5rem;
-  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 0 auto;
   transition: var(--transition);
 }
 
@@ -632,10 +769,18 @@ nav ul li a:hover::after {
 
 .contact-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  align-items: start;
+}
+
+/* Contact intro text */
+.contact-intro {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0.5rem auto 2rem;
+  color: var(--gray);
+  line-height: 1.7;
 }
 
 .contact-info {
@@ -645,10 +790,12 @@ nav ul li a:hover::after {
 }
 
 .contact-info p {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.contact-info p i {
+  margin-right: 0.5rem;
+  color: var(--primary);
 }
 
 .contact-info a {
@@ -675,7 +822,7 @@ nav ul li a:hover::after {
 
 .social-icons a:hover {
   color: var(--primary);
-  transform: translateY(-5px);
+  transform: translateY(-3px) scale(1.05);
 }
 
 .btn {
@@ -692,7 +839,7 @@ nav ul li a:hover::after {
   overflow: hidden;
   z-index: 1;
   cursor: pointer;
-  margin-top: 1.5rem;
+  margin-top: 0; /* avoid unexpected vertical gaps inside button rows */
 }
 
 .btn::before {
@@ -715,6 +862,51 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+/* Button variants (generic, used in contact buttons) */
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Contact buttons row */
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* center the buttons neatly */
+}
+
+.contact-buttons .btn {
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  min-width: 200px; /* consistent width */
+  text-align: center;
+}
+
+/* icon spacing inside buttons */
+.btn i {
+  margin-right: 0.5rem;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -724,7 +916,7 @@ nav ul li a:hover::after {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 1.1rem 1.2rem; /* a bit more padding for better usability */
   background: rgba(30, 30, 30, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -803,8 +995,12 @@ footer p {
     gap: 1rem;
   }
   
-  .hero-text h2 {
-    font-size: 2.5rem;
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
   }
   
   .about-container {
