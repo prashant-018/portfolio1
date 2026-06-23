@@ -54,6 +54,7 @@ h1 {
   font-size: 1.8rem;
   margin: 0;
   font-weight: 700;
+  letter-spacing: 1px;
   background: linear-gradient(45deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   background-clip: text;
@@ -123,7 +124,7 @@ nav ul li a:hover::after {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,0,93,0.1) 0%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(circle, rgba(255, 0, 93, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
   animation: pulse 15s infinite alternate;
 }
 
@@ -131,9 +132,11 @@ nav ul li a:hover::after {
   0% {
     transform: translate(0, 0);
   }
+
   50% {
     transform: translate(25%, 25%);
   }
+
   100% {
     transform: translate(-25%, -25%);
   }
@@ -187,8 +190,16 @@ nav ul li a:hover::after {
 }
 
 @keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .hero-cta {
@@ -238,9 +249,12 @@ nav ul li a:hover::after {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) perspective(1000px) rotateY(10deg);
   }
+
   50% {
     transform: translateY(-20px) perspective(1000px) rotateY(10deg);
   }
@@ -368,8 +382,15 @@ nav ul li a:hover::after {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .tab-content.active {
@@ -860,7 +881,8 @@ nav ul li a:hover::after {
   overflow: hidden;
   z-index: 1;
   cursor: pointer;
-  margin-top: 0; /* avoid unexpected vertical gaps inside button rows */
+  margin-top: 0;
+  /* avoid unexpected vertical gaps inside button rows */
 }
 
 .btn::before {
@@ -913,13 +935,15 @@ nav ul li a:hover::after {
   margin-top: 0.25rem;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center; /* center the buttons neatly */
+  justify-content: center;
+  /* center the buttons neatly */
 }
 
 .contact-buttons .btn {
   padding: 0.9rem 1.4rem;
   border-radius: 999px;
-  min-width: 200px; /* consistent width */
+  min-width: 200px;
+  /* consistent width */
   text-align: center;
 }
 
@@ -937,7 +961,8 @@ nav ul li a:hover::after {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 1.1rem 1.2rem; /* a bit more padding for better usability */
+  padding: 1.1rem 1.2rem;
+  /* a bit more padding for better usability */
   background: rgba(30, 30, 30, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -1010,20 +1035,21 @@ footer p {
     flex-direction: column;
     padding: 1rem 5%;
   }
-  
+
   nav ul {
     margin-top: 1rem;
     gap: 1rem;
   }
-  
+
   .hero-text h1 {
     font-size: 2.4rem;
   }
+
   .hero-cta {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .about-container {
     padding: 2rem;
   }
@@ -1033,11 +1059,13 @@ footer p {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
   .contact-buttons {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
   }
+
   .contact-buttons .btn {
     min-width: 0;
     width: 100%;
@@ -1052,26 +1080,26 @@ footer p {
     align-items: center;
     padding: 12rem 10% 6rem;
   }
-  
+
   .hero-text {
     max-width: 50%;
   }
-  
+
   .hero-image {
     margin-top: 0;
   }
-  
+
   .about-container {
     flex-direction: row;
     align-items: flex-start;
     text-align: left;
   }
-  
+
   .about-content {
     padding-left: 3rem;
     text-align: left;
   }
-  
+
   .tabs {
     justify-content: flex-start;
   }
@@ -1094,16 +1122,158 @@ footer p {
 
 
 .work-card {
-    aspect-ratio: 1/1;
+  aspect-ratio: 1/1;
 }
 
 .work-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .work-card.highlighted {
-    border: 2px solid var(--accent);
+  border: 2px solid var(--accent);
+}
+
+/* Tech Icons Grid */
+.tech-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.tech-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 10px;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tech-icon-item:hover {
+  transform: translateY(-5px);
+  background: rgba(40, 40, 40, 0.7);
+  border-color: rgba(255, 0, 93, 0.3);
+}
+
+.tech-icon-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.tech-icon-item span {
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* Certifications Section */
+.certifications {
+  padding: 6rem 5%;
+  background: var(--dark);
+  position: relative;
+}
+
+.certifications h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.certifications h2::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.cert-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  background: rgba(30, 30, 30, 0.7);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 0, 93, 0.05), transparent);
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+.cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 0, 93, 0.2);
+  border-color: rgba(255, 0, 93, 0.3);
+}
+
+.cert-card:hover::before {
+  transform: translateX(100%);
+}
+
+.cert-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.cert-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--light);
+  font-weight: 600;
+}
+
+.cert-issuer {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cert-year {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .tech-icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .cert-container {
+    grid-template-columns: 1fr;
+  }
 }
